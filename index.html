@@ -7,26 +7,31 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header></header>
-
     <main>
+      <div class="result-and-summary__container">
         <section class="result">
-            <div class="result__container">
-                <div class="result__heading">Your Result</div>
-                <div class="result__circle">
-                    <div class="result__score">
-                        76<br />
-                        of 100
-                    </div>
-                </div>
-                <p class="result__message">Great!</p>
-                <p class="result__message--paragraph">
-                    You scored higher than 65% of the people who have taken these tests.
-                </p>
+          <div class="result__container">
+            <div class="result__heading">Your Result</div>
+            <div class="result__circle">
+              <div class="result__score">
+                76<br />
+                of 100
+              </div>
             </div>
+            <p class="result__message">Great!</p>
+            <p class="result__message--paragraph">
+              You scored higher than 65% of the people who have taken these
+              tests.
+            </p>
+          </div>
         </section>
+        <section class="summary">
+          <div class="summary__container"></div>
+          <div class="categories__container" id="categories"></div>
+        </section>
+      </div>
     </main>
-
-    <footer></footer>
+    <script src="data.json"></script>
+    <script src="script.js"></script>
   </body>
 </html>
