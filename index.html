@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Webpage Title</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main>
-      <div class="result-and-summary__container">
-        <section class="result">
-          <div class="result__container">
-            <div class="result__heading">Your Result</div>
-            <div class="result__circle">
-              <div class="result__score">
-                76<br />
-                of 100
-              </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Webpage Title</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <div class="result-and-summary__container">
+      <section class="result">
+        <div class="result__container">
+          <h3>Your Result</h3>
+          <div class="result__circle">
+            <div class="result__score">
+              76<br />
+              of 100
             </div>
-            <p class="result__message">Great!</p>
-            <p class="result__message--paragraph">
+          </div>
+          <div class="result__message">
+            <h1>Great!</h1>
+            <p>
               You scored higher than 65% of the people who have taken these
               tests.
             </p>
           </div>
-        </section>
-        <section class="summary">
-          <div class="summary__container"></div>
+        </div>
+      </section>
+      <section class="summary">
+        <div class="summary__container">
+          <h2>Summary</h2>
           <div class="categories__container" id="categories"></div>
-        </section>
-      </div>
-    </main>
-    <script src="data.json"></script>
-    <script src="script.js"></script>
-  </body>
+        </div>
+        <button id="continue__button">Continue</button>
+      </section>
+    </div>
+  </main>
+  <script src="data.json"></script>
+  <script src="script.js"></script>
+</body>
 </html>

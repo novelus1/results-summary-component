@@ -32,15 +32,32 @@ jsonData.forEach((item) => {
   image.src = item.icon;
   image.alt = item.category;
 
+  const categoryTextContainer = document.createElement("div");
+  categoryTextContainer.style.display = "flex"; 
+  categoryTextContainer.style.alignItems = "center";
+
   const categorySpan = document.createElement("span");
   categorySpan.textContent = item.category;
 
-  const scoreSpan = document.createElement("span");
-  scoreSpan.textContent = `Score: ${item.score}`;
+  const scoreContainerSpan = document.createElement("span");
+  scoreContainerSpan.classList.add("score-container");
 
-  categoryDiv.appendChild(image);
-  categoryDiv.appendChild(categorySpan);
-  categoryDiv.appendChild(scoreSpan);
+  const scoreSpan = document.createElement("div");
+  scoreSpan.textContent = item.score;
+  scoreSpan.classList.add("score");
+
+  const scoreSuffixSpan = document.createElement("span");
+  scoreSuffixSpan.innerHTML = "&nbsp;&nbsp/ 100";
+  scoreSuffixSpan.classList.add("score-suffix");
+
+  scoreContainerSpan.appendChild(scoreSpan);
+  scoreContainerSpan.appendChild(scoreSuffixSpan);
+
+  categoryTextContainer.appendChild(image);
+  categoryTextContainer.appendChild(categorySpan);
+
+  categoryDiv.appendChild(categoryTextContainer);
+  categoryDiv.appendChild(scoreContainerSpan);
 
   categoriesContainer.appendChild(categoryDiv);
 });
