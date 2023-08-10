@@ -10,26 +10,26 @@ body {
 }
 
 .result-and-summary__container {
-  display: flex;
-  width: 720px;
-  height: 500px;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: absolute;
+  width: 720px;
+  height: auto;
   border-radius: 1rem;
   box-shadow: 1.5rem 1.5rem 1.5rem 1.5rem rgba(177, 197, 251, 0.13);
+  display: flex;
 }
 
 .result {
   display: flex;
-  border-radius: 1rem;
-  background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-  width: 360px;
-  height: 500px;
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 360px;
+  height: 500px;
+  border-radius: 1rem;
+  background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
 
 .result .result__container h3 {
@@ -38,23 +38,20 @@ body {
   margin-bottom: 2rem;
 }
 
-.result .result__container .result__circle {
+.result__container .result__circle {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin: auto;
-  height: 200px;
   width: 200px;
+  height: 200px;
   border-radius: 50%;
-  background-image: linear-gradient(
-    hsla(256, 72%, 46%, 1),
-    hsla(241, 72%, 46%, 0)
-  );
+  background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
 }
 
 .result__container .result__circle .result__score {
   font-size: 18px;
-  color: hsl(225, 23%, 66%)
+  color: hsl(225, 23%, 66%);
 }
 
 .result__score::first-line,
@@ -76,9 +73,9 @@ body {
 }
 
 .summary__container {
-  border-radius: 1rem;
   margin: 3rem;
   margin-bottom: 1rem;
+  border-radius: 1rem;
 }
 
 .summary .summary__container .category {
@@ -87,10 +84,10 @@ body {
   justify-content: space-between;
   width: 250px;
   height: 40px;
-  border-radius: 0.7rem;
-  font-weight: bold;
   padding: 10px;
   margin-bottom: 1rem;
+  border-radius: 0.7rem;
+  font-weight: bold;
 }
 
 .summary .summary__container .category img {
@@ -100,27 +97,28 @@ body {
 }
 
 .summary .summary__container .category-reaction {
-  color: hsl(0, 100%, 67%);
+  color: hsla(0, 100%, 67%, 0.695);
   background-color: rgb(248, 242, 242);
 }
 
 .summary .summary__container .category-memory {
-  color: hsl(39, 100%, 56%);
+  color: hsla(39, 100%, 56%, 0.746);
   background-color: rgb(255, 255, 241);
 }
 
 .summary .summary__container .category-verbal {
-  color: hsl(166, 100%, 37%);
+  color: hsla(166, 100%, 37%, 0.701);
   background-color: rgb(242, 254, 241);
 }
 
 .summary .summary__container .category-visual {
-  color: hsl(234, 85%, 45%);
+  color: hsla(234, 85%, 45%, 0.712);
   background-color: rgb(239, 238, 250);
 }
 
 .score-container {
   display: flex;
+  margin-right: 1rem;
 }
 
 .score {
@@ -129,6 +127,7 @@ body {
 }
 
 .score-suffix {
+  font-size: 18px;
   color: grey;
 }
 
@@ -137,9 +136,9 @@ body {
   align-items: center;
   justify-content: center;
   color: hsl(0, 0%, 100%);
-  background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  background-color: hsl(224, 30%, 27%);
   width: 270px;
-  height: 60px;
+  height: 45px;
   border-radius: 50px;
   border: none;
   font-weight: bold;
@@ -149,4 +148,70 @@ body {
 
 #continue__button:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    overflow: hidden;
+  }
+  
+  .result-and-summary__container {
+    flex-direction: column;
+    align-items: center;
+    width: 375px;
+    height: 105vh;
+    overflow: hidden;
+  }
+
+  .result {
+    border-radius: 0 0 30px 30px;
+    min-width: 375px;
+    height: 280px;
+  }
+
+  .result .result__container .result__circle {
+    width: 100px;
+    height: 100px;
+    margin-top: -1rem;
+  }
+
+  .result .result__container h3 {
+    font-size: 14px;
+    margin-top: 2rem;
+  }
+
+  .result__container .result__circle .result__score {
+    font-size: 12px;
+  }
+
+  .result__score::first-line,
+  .result__message {
+    font-size: 36px;
+  }
+
+  .result__message {
+    width: 200px;
+    font-weight: 300;
+    font-size: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .summary__container {
+    margin-top: 1rem;
+  }
+
+  .summary__container h2 {
+    font-size: 16px;
+  }
+
+  .summary .summary__container .category {
+    width: 300px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .score,
+  .score-suffix {
+    font-size: 14px;
+  }
 }
